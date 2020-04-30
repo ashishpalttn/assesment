@@ -34,6 +34,7 @@ class Home extends React.Component {
       ],
     };
   }
+  
 
   render() {
     const {arr} = this.state;
@@ -57,7 +58,19 @@ class Home extends React.Component {
               />
            </View>
            </View>
+
+
         <ScrollView style={styles.scrollView}>
+          { arr.map( item=> {
+
+              return (
+              <Image
+              source={{uri: item.image}}
+              style={{width: 200, height: 100, borderRadius:15}}
+              />
+             );
+           })
+          }
        
           <View style={{flex: 0.2, backgroundColor: '#dedcdc', margin: 15}}>
             <FlatList
@@ -174,6 +187,7 @@ class Home extends React.Component {
               }}
             />
           </View>
+
         </ScrollView>
       </SafeAreaView>
     );
